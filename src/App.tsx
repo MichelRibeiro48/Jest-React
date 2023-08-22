@@ -1,8 +1,10 @@
+import { Home } from './pages/Home'
+
 function App() {
   return (
-    <>
-      <h1 className=''>Hello world!</h1>
-    </>
+    <div className='flex flex-col bg-slate-950 w-screen h-screen'>
+      <Home />
+    </div>
   )
 }
 
