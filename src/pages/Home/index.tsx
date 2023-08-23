@@ -33,40 +33,39 @@ export const Home: React.FC = () => {
   }
 
   return (
-    <main className='flex flex-col flex-1 items-center justify-center'>
+    <main className="flex flex-col flex-1 items-center justify-center">
       <div>
-        <h1 className='my-8 text-3xl font-bold'>Lista de compras</h1>
-        <form
-          action=''
-          className='flex gap-2'
-          onSubmit={handleSubmit}
-        >
+        <h1 className="my-8 text-3xl font-bold">Lista de compras</h1>
+        <form action="" className="flex gap-2" onSubmit={handleSubmit}>
           <InputComponent
-            placeholder='Qtd'
-            name='quantity'
-            className='w-24 text-center'
+            placeholder="Qtd"
+            name="quantity"
+            testID="QtdID"
+            className="w-24 text-center"
             onChange={handleChange}
             value={product.quantity}
           />
           <InputComponent
-            placeholder='Produto'
-            name='name'
+            testID="NameID"
+            placeholder="Produto"
+            name="name"
             onChange={handleChange}
             value={product.name}
           />
           <button
-            type='submit'
-            className='text-black bg-white rounded-md px-4 transition-all'
+            type="submit"
+            className="text-black bg-white rounded-md px-4 transition-all"
           >
             Adicionar
           </button>
         </form>
 
-        <ul className='flex flex-col list-none my-4'>
-          {products.map((product) => (
+        <ul className="flex flex-col list-none my-4">
+          {products.map((product, index) => (
             <ProductComponent
               handleDelete={handleDelete}
               product={product}
+              myKey={index}
             />
           ))}
         </ul>
